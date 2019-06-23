@@ -11,7 +11,6 @@ export class SinglePostComponent implements OnInit {
 
   title: string;
   content: string;
-  loveIts: number;
   createdAt: Date;
 
   constructor(private postService: PostService,
@@ -21,7 +20,6 @@ export class SinglePostComponent implements OnInit {
     const id = this.route.snapshot.params['id'];
     this.title = this.postService.getPostById(+id).title;
     this.content = this.postService.getPostById(+id).content;
-    this.loveIts = this.postService.getPostById(+id).loveIts;
     this.createdAt = this.postService.getPostById(+id).created_at;
   }
 

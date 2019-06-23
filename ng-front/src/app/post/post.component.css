@@ -1,0 +1,9 @@
+.post-content{
+    overflow: hidden;
+    height: 52px;
+    text-overflow: ellipsis;
+}
+
+.list-group-item{
+    margin: 20px;
+}

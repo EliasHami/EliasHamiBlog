@@ -1,0 +1,11 @@
+.navbar-inverse{
+    height: 66px;
+    background: darkgreen;
+}
+
+.navbar-inverse a{
+    vertical-align: middle;
+    
+    height: 66px;
+    font-weight: 700;
+}

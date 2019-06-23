@@ -1,12 +1,7 @@
-<li [ngClass]="{'list-group-item': true,
-                'list-group-item-success': postLoveIts > 0,
-                'list-group-item-danger':  postLoveIts < 0}">
+<section class="list-group-item">
   <div class="pull-right">{{ postCreatedAt | date: 'short' }}</div>
-  <div>{{ postTitle }}</div>
-  <div>{{ postContent }}</div>
-  <a [routerLink]="'posts/'+ postId">Voir plus..</a>
-  <!-- <div class="btn btn-success"
-        (click)="onJaime()">j'aime</div>
-  <div class="btn btn-danger"
-        (click)="onJenaimepas()">je n'aime pas</div> -->
-</li>
+  <h2 class="list-group-item-heading">{{ postTitle }}</h2>
+  <div class="list-group-item-text post-content">{{ postContent }}</div>
+    
+  <a class="card-link" [routerLink]="'posts/'+ postId">Voir plus..</a>
+</section>

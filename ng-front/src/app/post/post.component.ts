@@ -8,7 +8,6 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PostComponent implements OnInit {
   @Input() postTitle: string;
   @Input() postContent: string;
-  @Input() postLoveIts: number;
   @Input() postCreatedAt: Date;
   @Input() postId: number;
   constructor() { }
@@ -16,12 +15,5 @@ export class PostComponent implements OnInit {
   ngOnInit() {
   }
 
-  onJaime(){
-    this.postLoveIts += 1;
-  }
-
-  onJenaimepas(){
-    this.postLoveIts -= 1;
-  }
 
 }

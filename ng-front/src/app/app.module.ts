@@ -11,9 +11,9 @@ import { PostViewComponent } from './post-view/post-view.component';
 import { Routes, RouterModule } from '@angular/router';
 import { SinglePostComponent } from './single-post/single-post.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
-  { path: 'posts', component: PostViewComponent },
   { path: 'posts/:id', component: SinglePostComponent },
   { path: '', component: PostViewComponent },
   { path: 'not-found', component: FourOhFourComponent },
@@ -33,7 +33,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [
     PostService
