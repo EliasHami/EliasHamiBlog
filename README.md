@@ -1,3 +1,3 @@
-# 5G_Blog
+# GoldenData
 
-Blog about 5g coded in Angular
+Blog about Artificial Intelligence coded in Angular

@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { PostService } from '../post.service';
 import { Subscription } from 'rxjs';
+import { Post } from '../post.model';
 
 @Component({
   selector: 'app-post-view',
@@ -8,14 +9,14 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./post-view.component.css']
 })
 export class PostViewComponent implements OnInit, OnDestroy {
-  posts: any[];
+  posts: Post[];
   postsSubscription: Subscription;
 
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
     this.postsSubscription = this.postService.postSubject.subscribe(
-      (posts: any[]) => {
+      (posts: Post[]) => {
         this.posts = posts;
       }
     );
