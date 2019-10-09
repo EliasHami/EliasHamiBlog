@@ -1,7 +1,6 @@
-<section class="list-group-item">
-  <div class="pull-right">{{ postCreatedAt | date: 'short' }}</div>
-  <h2 class="list-group-item-heading">{{ postTitle }}</h2>
-  <div class="list-group-item-text post-content">{{ postContent }}</div>
-    
-  <a class="card-link" [routerLink]="'posts/'+ postId">Voir plus..</a>
-</section>
+<a [routerLink]="'post/'+ postId" class="card">
+  <img src="../../assets/numero1.jpg" alt="Avatar" class="card-img">
+  <h3 class="card-title">{{ postTitle }}</h3>
+  <p class="card-fade">{{ postContent }}</p>
+
+</a>

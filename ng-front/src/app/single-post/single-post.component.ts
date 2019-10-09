@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 import { ActivatedRoute } from '@angular/router';
+import { Post } from '../post.model';
 
 @Component({
   selector: 'app-single-post',
@@ -9,18 +10,19 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SinglePostComponent implements OnInit {
 
-  title: string;
-  content: string;
-  createdAt: Date;
+  post: Post;
 
   constructor(private postService: PostService,
               private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.post = new Post('', new Date(), 0, '');
     const id = this.route.snapshot.params['id'];
-    this.title = this.postService.getPostById(+id).title;
-    this.content = this.postService.getPostById(+id).content;
-    this.createdAt = this.postService.getPostById(+id).created_at;
+    this.postService.getSinglePostFromServer(id).then(
+      (post: Post) => {
+        this.post = post;
+      }
+    );
   }
 
 }

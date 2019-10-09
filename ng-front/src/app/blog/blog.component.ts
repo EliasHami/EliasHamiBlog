@@ -4,11 +4,11 @@ import { Subscription } from 'rxjs';
 import { Post } from '../post.model';
 
 @Component({
-  selector: 'app-post-view',
-  templateUrl: './post-view.component.html',
-  styleUrls: ['./post-view.component.css']
+  selector: 'app-blog',
+  templateUrl: './blog.component.html',
+  styleUrls: ['./blog.component.css']
 })
-export class PostViewComponent implements OnInit, OnDestroy {
+export class BlogComponent implements OnInit, OnDestroy  {
   posts: Post[];
   postsSubscription: Subscription;
 
@@ -18,6 +18,7 @@ export class PostViewComponent implements OnInit, OnDestroy {
     this.postsSubscription = this.postService.postSubject.subscribe(
       (posts: Post[]) => {
         this.posts = posts;
+        console.log(this.posts);
       }
     );
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import * as firebase from 'firebase';
 import { firebaseConfig } from './firebase-config';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,9 @@ import { firebaseConfig } from './firebase-config';
 })
 export class AppComponent {
 
-  constructor(){
-
+  constructor(private router: Router) {
     firebase.initializeApp(firebaseConfig);
   }
+
+
 }
