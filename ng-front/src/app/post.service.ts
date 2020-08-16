@@ -11,7 +11,7 @@ export class PostService {
   postSubject = new Subject<Post[]>();
   private posts: Post[];
 
-  constructor(private httpClient: HttpClient){
+  constructor(private httpClient: HttpClient) {
 
   }
 
@@ -19,16 +19,21 @@ export class PostService {
     this.postSubject.next(this.posts.slice());
   }
 
-  getPostById(id: number){
-    const post = this.posts.find(
-      (s) => {
-        return s.id === id;
+  getSinglePostFromServer(id: number) {
+    return new Promise(
+      (resolve, reject) => {
+        firebase.database().ref('/posts/' + id).once('value').then(
+          (data: DataSnapshot) => {
+            resolve(data.val());
+          }, (error) => {
+            reject(error);
+          }
+        );
       }
     );
-    return post;
   }
 
-  getPostFromServer(){
+  getPostFromServer() {
     firebase.database().ref('/posts')
       .on('value', (data: DataSnapshot) => {
         this.posts = data.val() ? data.val() : [];

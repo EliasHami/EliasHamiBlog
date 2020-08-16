@@ -1,9 +1,50 @@
-.post-content{
-    overflow: hidden;
-    height: 52px;
-    text-overflow: ellipsis;
+.card, .card-title, .card-fade {
+    padding: 0 11px;
 }
 
-.list-group-item{
-    margin: 20px;
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 29%;
+    height: 500px;
+    display: inline-flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    color: #008cba;
+    text-align: center;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    color: orange;
+}
+
+.card-img {
+    width: 100%;
+}
+
+.card-title{
+    margin: 30px 0 20px;
+}
+
+.card-fade {
+  position: relative;
+  height: 70px;
+  color: #626262;
+  overflow: hidden;
+  text-align: left;
+}
+
+.card-fade:after {
+  content: "";
+  text-align: left;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 1.2em;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
 }

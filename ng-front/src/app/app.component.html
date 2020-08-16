@@ -1,10 +1,8 @@
+<app-header *ngIf="router.url == '/'"></app-header>
+<app-nav></app-nav>
 
-<app-header></app-header>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <router-outlet></router-outlet>
-    </div>
-  </div>      
-</div>
+<section class="page">
+  <router-outlet></router-outlet>
+</section>
+
 <app-footer></app-footer>

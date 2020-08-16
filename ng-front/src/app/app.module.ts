@@ -4,18 +4,21 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
 import { FormsModule } from '@angular/forms';
-import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PostService } from './post.service';
-import { PostViewComponent } from './post-view/post-view.component';
 import { Routes, RouterModule } from '@angular/router';
 import { SinglePostComponent } from './single-post/single-post.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { NavComponent } from './nav/nav.component';
+import { HeaderComponent } from './header/header.component';
+import { BlogComponent } from './blog/blog.component';
 
 const appRoutes: Routes = [
-  { path: 'posts/:id', component: SinglePostComponent },
-  { path: '', component: PostViewComponent },
+  { path: '', component: LandingPageComponent },
+  { path: 'blog', component: BlogComponent },
+  { path: 'blog/post/:id', component: SinglePostComponent },
   { path: 'not-found', component: FourOhFourComponent },
   { path: '**', redirectTo : 'not-found'}
 ];
@@ -24,11 +27,13 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     PostComponent,
-    HeaderComponent,
     FooterComponent,
-    PostViewComponent,
     SinglePostComponent,
-    FourOhFourComponent
+    FourOhFourComponent,
+    LandingPageComponent,
+    NavComponent,
+    HeaderComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
