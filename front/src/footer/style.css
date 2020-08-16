@@ -1,0 +1,12 @@
+.footer{
+      padding: 20px;
+      text-align: center;
+      background: #ddd;
+      margin-top: 20px;
+  }
+  
+  .contact{
+      margin: 20px;
+      max-width: 300px;
+      vertical-align: center;
+  }
