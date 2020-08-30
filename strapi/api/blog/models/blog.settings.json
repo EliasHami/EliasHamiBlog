@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "name": "blog"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "posts": {
+      "via": "blog",
+      "collection": "post"
+    },
+    "pulished": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
