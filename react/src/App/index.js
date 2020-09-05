@@ -16,7 +16,7 @@ import Blog from "../blog"
 import Post from "../post"
 import FourOhFour from "../four-oh-four"
 
-Firebase.initializeApp(firebaseConfig);
+// Firebase.initializeApp(firebaseConfig);
 
 function App() {
   return (
@@ -27,10 +27,12 @@ function App() {
             <Route exact path="/" component={LandingPage} />
             <Switch>
               <Route exact path="/blog">
-                <Blog firebase={Firebase} />
+                {/* <Blog firebase={Firebase} /> */}
+                <Blog />
               </Route>
               <Route exact path="/posts/:id">
-                <Post firebase={Firebase} />
+                {/* <Post firebase={Firebase} /> */}
+                <Post />
               </Route>
               <Route component={FourOhFour} />
             </Switch>
