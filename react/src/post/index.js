@@ -1,25 +1,49 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import "./style.css"
+import { useDataAPI} from "../utils"
 import { useParams  } from "react-router-dom"
+import parse from "html-react-parser"
 
-const Post = ({firebase}) => {
+const Post = () => {
       const { id } = useParams()
-      const [post, setPost] = useState({})
-
+      const [{data, isLoading, isError}, doFetch] = useDataAPI("http://eliashami.com/index.php/wp-json/wp/v2/posts/" + id, {})
+      
+      // useEffect(() => {
+            // firebase.database().ref('/posts/' + id)
+            //       .once('value', data => {
+                  //             const post = data.val() || {}
+                  //             setPost(post)
+                  //             })
+                  // }, [firebase, id])
+                  
       useEffect(() => {
-            firebase.database().ref('/posts/' + id)
-                  .once('value', data => {
-                        const post = data.val() || {}
-                        setPost(post)
-                  })
-      }, [firebase, id])
+            doFetch("posts/" + id)
+      }, [id, doFetch])
+      
+      const content = data.content?.rendered && parse(data.content.rendered)
+
+      console.log({content0 : data.content?.rendered, content })
 
       return (
-            <article class="article">
-                  <h2>{ post.title }</h2>
-                  <h5>{ post.created_at }</h5>
-                  <p>{ post.content }</p>
-            </article>
+            <>
+            { isLoading ? (
+                  <div>Loading...</div>
+            ) : (
+                  <ul className="post-list">
+                        { 
+                              isError ? <div>Something went wrong ...</div> : (
+                                    data && (
+                                          <article className="article">
+                                                <h2>{ data.title?.rendered }</h2>
+                                                {/* <h5>{ data.created_at }</h5> */}
+                                                <p>{ content }</p>
+                                          </article>)
+                              )
+                        }
+                  </ul>
+                  
+            )}
+      </>
       )
 }
 

@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import "./style.css"
 import PostCard from "./postCard"
+import {useDataAPI} from "../utils"
 
-const Blog = (props) => {
-      const [posts, setPosts] = useState([])
+const Blog = () => {
+      const [{data, isLoading, isError}] = useDataAPI("http://eliashami.com/index.php/wp-json/wp/v2/posts", [])
 
       // this is run once (unless firebase changes)
       // it will listen to changes on ref /posts and set posts state
@@ -18,22 +19,25 @@ const Blog = (props) => {
       //       return(() => ref.off('value', listener))
       // }, [props.firebase])
 
-      useEffect(async() => {
-            const response = await fetch('http://eliashami.com/index.php/wp-json/wp/v2/posts')
-            const json = await response.json()
-            setPosts(json || [])
-            // .then(response => setPosts(response.json() || []))
-                  // .then(data => console.log(data));
-      }, [])
+      // useEffect(() => doFetch("posts"), [doFetch])
 
       return (
-            <ul class="post-list">
-                  { 
-                        posts?.map(post => (
-                              <PostCard post={post} />
-                        ))
-                  }
-            </ul>
+            <>
+                  { isLoading ? (
+                        <div>Loading...</div>
+                  ) : (
+                        <ul className="post-list">
+                              { 
+                                    isError ? <div>Something went wrong ...</div> : (
+                                          data?.map(post => (
+                                                <PostCard key={post.id} post={post} />
+                                          ))
+                                    )
+                              }
+                        </ul>
+                        
+                  )}
+            </>
       )
 }
 

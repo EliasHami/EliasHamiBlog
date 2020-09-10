@@ -5,12 +5,12 @@ import {
   Route,
   // Link
 } from "react-router-dom";
-import Firebase from 'firebase'
-import firebaseConfig from '../firebase-config'
+// import Firebase from 'firebase'
+// import firebaseConfig from '../firebase-config'
 import './style.css';
-import Header from '../header'
+// import Header from '../header'
 import Nav from '../nav'
-import LandingPage from '../landingPage'
+// import LandingPage from '../landingPage'
 import Footer from '../footer'
 import Blog from "../blog"
 import Post from "../post"
@@ -22,18 +22,14 @@ function App() {
   return (
     <div className="App">
         <Router>
-            <Route exact path="/" component={Header}/>
+            {/* <Route exact path="/" component={Header}/> */}
             <Nav/>
-            <Route exact path="/" component={LandingPage} />
+            {/* <Route exact path="/" component={LandingPage} /> */}
             <Switch>
-              <Route exact path="/blog">
+              <Route exact path="/" component={Blog}/>
                 {/* <Blog firebase={Firebase} /> */}
-                <Blog />
-              </Route>
-              <Route exact path="/posts/:id">
+              <Route exact path="/posts/:id" component={Post}/>
                 {/* <Post firebase={Firebase} /> */}
-                <Post />
-              </Route>
               <Route component={FourOhFour} />
             </Switch>
             <Footer/>
