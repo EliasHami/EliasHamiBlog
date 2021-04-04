@@ -12,7 +12,7 @@ const Nav = () => {
                         <Link to="/about" className="nav-a">A propos de moi</Link>
                   </li>
                   <li className="nav-li">
-                        <Link to="/" className="nav-a">Blog</Link>
+                        <Link to="/blog" className="nav-a">Blog</Link>
                   </li>
                   <li className="nav-li">
                         <Link to="/contact" className="nav-a">Contact</Link>

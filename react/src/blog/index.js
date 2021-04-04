@@ -4,22 +4,7 @@ import PostCard from "./postCard"
 import {useDataAPI} from "../utils"
 
 const Blog = () => {
-      const [{data, isLoading, isError}] = useDataAPI("http://eliashami.com/index.php/wp-json/wp/v2/posts", [])
-
-      // this is run once (unless firebase changes)
-      // it will listen to changes on ref /posts and set posts state
-      // when Unmounted ref will be cleaned off
-      // useEffect(() => {
-      //       const ref = props.firebase.database().ref('/posts')
-      //       const listener = ref.on('value', data => {
-      //             const posts = data.val() || [];
-      //             setPosts(posts)
-      //       })
-
-      //       return(() => ref.off('value', listener))
-      // }, [props.firebase])
-
-      // useEffect(() => doFetch("posts"), [doFetch])
+      const [{data, isLoading, isError}] = useDataAPI("https://dev.to/api/articles?username=eliashami", [])
 
       return (
             <>

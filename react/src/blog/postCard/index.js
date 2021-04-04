@@ -5,7 +5,7 @@ import parse from "html-react-parser"
 
 const PostCard = ({post}) => {
       return (
-            <Link to={'posts/'+ post.id} className="card">
+            <Link to={'blog/posts/'+ post.id} className="card">
                   <img src={require("./numero1.jpg")} alt="Avatar" className="card-img"/>
                   <h3 className="card-title">{post?.title?.rendered}</h3>
                   <p className="card-fade">{parse(post?.excerpt?.rendered)}</p>

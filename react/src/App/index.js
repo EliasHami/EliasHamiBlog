@@ -19,12 +19,10 @@ function App() {
         <Router>
             <Route exact path="/" component={Header}/>
             <Nav/>
-            <Route exact path="/" component={LandingPage} />
             <Switch>
-              {/* <Route exact path="/" component={Blog}/> */}
-                {/* <Blog firebase={Firebase} /> */}
-              {/* <Route exact path="/posts/:id" component={Post}/> */}
-                {/* <Post firebase={Firebase} /> */}
+              <Route exact path="/" component={LandingPage} />
+              <Route exact path="/blog" component={Blog}/>
+              <Route exact path="/blog/posts/:id" component={Post}/>
               <Route component={FourOhFour} />
             </Switch>
             <Footer/>
