@@ -4,12 +4,14 @@ import styled from "styled-components"
 
 const NavBar = styled.nav`
 font-size: 25px;
-background:#10828C;
+background:#fff;
 overflow: hidden;
-position: sticky;
+position: fixed;
 top: 0;
 z-index: 999;
 margin: 0;
+width : 100%;
+box-shadow : 0 5px 20px -10px #000;
 
 & ul {
       display : flex;
@@ -19,14 +21,13 @@ margin: 0;
 
 & a {
       text-decoration: none;
-      color: #f4f4f4;
+      color: #333;
       cursor: pointer;
       margin : 0 30px;
 }
 
 & a:hover {
-      background: #f4f4f4;
-      color: #f97300;
+      color: #10828C;
 }
 
 `
