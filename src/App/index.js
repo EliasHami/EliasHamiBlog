@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
@@ -16,7 +16,7 @@ import FourOhFour from "../four-oh-four"
 function App() {
   return (
     <div className="App">
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
             {/* <Route exact path="/" component={Header}/> */}
             <header>
               <Nav/>
