@@ -1,7 +1,6 @@
 {
-  "name": "front",
+  "name": "hami_elias",
   "version": "0.1.0",
-  "homepage": "http://box5675.bluehost.com",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",

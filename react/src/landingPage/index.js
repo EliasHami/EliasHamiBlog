@@ -11,14 +11,12 @@ const LandingPage = () => {
                         <div className="column-desc">
                               <h1>Développeur Front-End Toulouse</h1>
                               <p>
-                                    Je me présente, je m'appelle Elias j'ai 26 ans, j'ai eu mon bac S spécialité Physique en 2010 avec mention
-                                    très
-                                    bien.
-                                    ....
-                                    Je me présente, je m'appelle Elias j'ai 26 ans, j'ai eu mon bac S spécialité Physique en 2010 avec mention
-                                    très
-                                    bien.
-                                    ....
+                                    Je me présente, je m'appelle Elias, j'ai 28 ans et je suis développeur Web Front-End.<br/>
+                                    Je suis passionné d'informatique : Développement Web et de jeux vidéos.<br/>
+                                    Je donne également des cours de web sur Superprof :)<br/>
+                                    J'aime également le sport et jouer aux jeux vidéos.<br/>
+
+                                    N’hésitez pas à me contacter ! 
                               </p>
                         </div>
                   </div>
