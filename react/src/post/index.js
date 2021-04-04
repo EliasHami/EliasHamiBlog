@@ -8,14 +8,6 @@ const Post = () => {
       const { id } = useParams()
       const [{data, isLoading, isError}, doFetch] = useDataAPI("http://eliashami.com/index.php/wp-json/wp/v2/posts/" + id, {})
       
-      // useEffect(() => {
-            // firebase.database().ref('/posts/' + id)
-            //       .once('value', data => {
-                  //             const post = data.val() || {}
-                  //             setPost(post)
-                  //             })
-                  // }, [firebase, id])
-                  
       useEffect(() => {
             doFetch("posts/" + id)
       }, [id, doFetch])

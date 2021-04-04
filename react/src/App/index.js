@@ -5,7 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import './style.css';
-import Header from '../header'
+// import Header from '../header'
 import Nav from '../nav'
 import LandingPage from '../landingPage'
 import Footer from '../footer'
@@ -17,14 +17,18 @@ function App() {
   return (
     <div className="App">
         <Router>
-            <Route exact path="/" component={Header}/>
-            <Nav/>
-            <Switch>
-              <Route exact path="/" component={LandingPage} />
-              <Route exact path="/blog" component={Blog}/>
-              <Route exact path="/blog/posts/:id" component={Post}/>
-              <Route component={FourOhFour} />
-            </Switch>
+            {/* <Route exact path="/" component={Header}/> */}
+            <header>
+              <Nav/>
+            </header>
+            <main>
+              <Switch>
+                <Route exact path="/" component={LandingPage} />
+                <Route exact path="/blog" component={Blog}/>
+                <Route exact path="/blog/posts/:id" component={Post}/>
+                <Route component={FourOhFour} />
+              </Switch>
+            </main>
             <Footer/>
         </Router>
     </div>
