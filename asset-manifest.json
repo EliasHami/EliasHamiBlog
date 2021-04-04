@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/EliasHamiBlog/static/css/main.d0dd00f3.chunk.css",
+    "main.js": "/EliasHamiBlog/static/js/main.39a0a19e.chunk.js",
+    "main.js.map": "/EliasHamiBlog/static/js/main.39a0a19e.chunk.js.map",
+    "runtime-main.js": "/EliasHamiBlog/static/js/runtime-main.9292d9c9.js",
+    "runtime-main.js.map": "/EliasHamiBlog/static/js/runtime-main.9292d9c9.js.map",
+    "static/js/2.125b2362.chunk.js": "/EliasHamiBlog/static/js/2.125b2362.chunk.js",
+    "static/js/2.125b2362.chunk.js.map": "/EliasHamiBlog/static/js/2.125b2362.chunk.js.map",
+    "index.html": "/EliasHamiBlog/index.html",
+    "precache-manifest.b71c22742658020d2686b6c076114079.js": "/EliasHamiBlog/precache-manifest.b71c22742658020d2686b6c076114079.js",
+    "service-worker.js": "/EliasHamiBlog/service-worker.js",
+    "static/css/main.d0dd00f3.chunk.css.map": "/EliasHamiBlog/static/css/main.d0dd00f3.chunk.css.map",
+    "static/js/2.125b2362.chunk.js.LICENSE.txt": "/EliasHamiBlog/static/js/2.125b2362.chunk.js.LICENSE.txt",
+    "static/media/moi.jpg": "/EliasHamiBlog/static/media/moi.7dba372e.jpg",
+    "static/media/numero1.jpg": "/EliasHamiBlog/static/media/numero1.3a9dc53b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9292d9c9.js",
+    "static/js/2.125b2362.chunk.js",
+    "static/css/main.d0dd00f3.chunk.css",
+    "static/js/main.39a0a19e.chunk.js"
+  ]
+}
